@@ -1,2 +1,1 @@
-# slackbuilds
-My SlackBuilds
+In this repository i put my own slackbuilds, self made or modified from slackbuilds.org
