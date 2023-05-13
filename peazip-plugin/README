@@ -1,0 +1,7 @@
+This package contains ARC, LPAQ8, PAQ8O, BCM, and ZPAQ, as those 
+binaries were removed in order to reduce the dependencies for
+installation of the base PeaZip application.
+Please note this package provides some x86 32 bit executable software,
+Slackware x86 64 bit systems needs Multilib to run 32 bit binaries.
+
+* ARC require a compat32 'nghttp2' package

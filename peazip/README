@@ -1,0 +1,8 @@
+PeaZip is a free file archiver utility, similar to WinRar, WinZip, 
+and 7-Zip (or File Roller, and Ark on Linux), based on Open Source
+technologies of 7-Zip / p7zip archiver, Facebook Zstandard compressor,
+FreeArc, Google Brotli compressor, PAQ family of compressors, 
+PEA (archiving and encryption) project, and other Free Software file
+compression tools.
+
+This is a repackaging of PeaZip portable, GTK2 version.
