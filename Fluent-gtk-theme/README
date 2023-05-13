@@ -1,0 +1,9 @@
+Fluent theme
+
+Fluent is a Fluent design theme for GNOME/GTK based desktop 
+environments.
+
+You can choose from different color theme:
+default|purple|pink|red|orange|yellow|green|grey|teal|all (Default:blue)
+
+for example: COLOR=purple ./Fluent-gtk-theme.SlackBuild
