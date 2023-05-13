@@ -1,0 +1,7 @@
+After installing lightdm, you might want to create 
+'/etc/rc.d/rc.4.local' and add to it the following snippet:
+
+#!/bin/bash
+if [ -x /usr/sbin/lightdm ]; then
+  exec /usr/sbin/lightdm
+fi

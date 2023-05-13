@@ -1,0 +1,24 @@
+--- lightdm-1.32.0/data/lightdm.conf	2022-07-04 05:28:22.000000000 +0200
++++ lightdm-1.32.0_new/data/lightdm.conf	2023-04-17 18:27:04.051618506 +0200
+@@ -20,9 +20,9 @@
+ #
+ [LightDM]
+ #start-default-seat=true
+-#greeter-user=lightdm
++greeter-user=gdm
+ #minimum-display-number=0
+-#minimum-vt=7
++minimum-vt=7
+ #lock-memory=true
+ #user-authority-in-system-dir=false
+ #guest-account-script=guest-account
+--- lightdm-1.32.0/data/users.conf	2019-08-05 00:29:55.000000000 +0200
++++ lightdm-1.32.0_new/data/users.conf	2023-04-17 18:27:21.189618240 +0200
+@@ -9,6 +9,6 @@
+ # hidden-shells = Shells that indicate a user cannot login
+ #
+ [UserList]
+-minimum-uid=500
++minimum-uid=1000
+ hidden-users=nobody nobody4 noaccess
+ hidden-shells=/bin/false /usr/sbin/nologin /sbin/nologin

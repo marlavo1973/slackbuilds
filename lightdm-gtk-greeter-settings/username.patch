@@ -1,0 +1,12 @@
+diff -Naur lightdm-gtk-greeter-settings-1.2.2/lightdm_gtk_greeter_settings/helpers.py lightdm-gtk-greeter-settings-1.2.2-new/lightdm_gtk_greeter_settings/helpers.py
+--- lightdm-gtk-greeter-settings-1.2.2/lightdm_gtk_greeter_settings/helpers.py	2017-09-19 13:56:17.000000000 +0300
++++ lightdm-gtk-greeter-settings-1.2.2-new/lightdm_gtk_greeter_settings/helpers.py	2022-02-06 23:09:55.230342383 +0200
+@@ -188,7 +188,7 @@
+         files += ['/etc/lightdm/lightdm.conf']
+         config = configparser.RawConfigParser(strict=False)
+         config.read(files)
+-        username = config.get('LightDM', 'greeter-user', fallback='lightdm')
++        username = config.get('LightDM', 'greeter-user', fallback='gdm')
+ 
+         pw = pwd.getpwnam(username)
+         uid = pw.pw_uid
