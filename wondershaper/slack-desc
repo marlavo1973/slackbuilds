@@ -6,14 +6,14 @@
 # customary to leave one space after the ':' except on otherwise blank lines.
 
             |-----handy-ruler------------------------------------------------------|
-wondershaper: Wonder Shaper is a script that allows the user to limit the bandwidth 
+wondershaper: wondershaper (traffic shaper)
+wondershaper: Wonder Shaper is a script that allows the user to limit the bandwidth
 wondershaper: of one or more network adapters.
-wondershaper: 
-wondershaper: It does so by using iproute's tc command, but greatly simplifies 
-wondershaper: its operation. 
-wondershaper: Wonder Shaper was first released by Bert Hubert in 2002
-wondershaper: 
+wondershaper: It does so by using iproute's tc command, but greatly simplifies
+wondershaper: its operation.
 wondershaper:
-wondershaper: 
-wondershaper: 
+wondershaper: Wonder Shaper was first released by Bert Hubert in 2002
+wondershaper:
+wondershaper:
+wondershaper:
 wondershaper:
