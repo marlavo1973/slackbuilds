@@ -57,7 +57,7 @@ find -L . \
 
 install -Dm755 wondershaper $PKG/usr/sbin/wondershaper
 install -Dm644 wondershaper.conf $PKG/etc/default/wondershaper.conf.new
-sed -i "s@/etc/systemd/wondershaper.conf@/etc/default/wondershaper.conf@g"  $PKG/usr/sbin/wondershaper
+sed -i "s@/etc/systemd/wondershaper.conf@/etc/default/wondershaper.conf@g" $PKG/usr/sbin/wondershaper
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
 cp -a \

@@ -1,4 +1,4 @@
-This package contains ARC, LPAQ8, PAQ8O, BCM, and ZPAQ, as those 
+This package contains ARC, LPAQ8, PAQ8O, BCM and ZPAQ, as those 
 binaries were removed in order to reduce the dependencies for
 installation of the base PeaZip application.
 Please note this package provides some x86 32 bit executable software,

@@ -48,7 +48,7 @@ rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf $PRGNAM-$VERSION
-tar xvf $CWD/peazip-additional-formats-plugin.5.LINUX.tar
+tar xvf $CWD/peazip-additional-formats-plugin.$VERSION.LINUX.tar
 cd $SRCNAM
 
 chown -R root:root .
