@@ -78,7 +78,7 @@ make olddefconfig
 make prepare
 
 # compile kernel and modules
-time make \
+make \
   bzImage \
   modules \
   -j$NUMJOBS \
