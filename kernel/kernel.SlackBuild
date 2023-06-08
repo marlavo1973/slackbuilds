@@ -67,7 +67,11 @@ find -L . \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \+
 
 # copy kernel configuration 
-cp $CWD/config-$VERSION $TMP/linux-$VERSION/.config
+if [ -e $CWD/config-$VERSION ]; then
+  cp $CWD/config-$VERSION $TMP/linux-$VERSION/.config
+else
+  zcat /proc/config.gz > $TMP/linux-$VERSION/.config
+fi
 cd $TMP/$SRCNAM-$VERSION
 
 # apply patches
@@ -101,8 +105,6 @@ find $PKG -name "*.ko" -exec strip --strip-debug "{}" \;
   ln -sf ../../../usr/src/$SRCNAM-$VERSION build
   ln -sf ../../../usr/src/$SRCNAM-$VERSION source
 )
-
-depmod -b $PKG -a ${VERSION}
 
 # copy kernel, system.map and config
 cp arch/x86/boot/bzImage $PKG/boot/vmlinuz-$VERSION
