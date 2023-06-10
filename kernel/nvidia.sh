@@ -4,7 +4,7 @@
 #
 set -e
 
-VERSION=6.3.6
+VERSION=6.3.7
 NVIDIA=${NVIDIA:-530.41.03}
 NUMJOBS=${NUMJOBS:-$(expr $(nproc) + 1)}
 
