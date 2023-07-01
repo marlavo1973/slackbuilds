@@ -1,0 +1,24 @@
+IPTV player with EPG support (Astroncia IPTV fork)
+
+Features
+
+-  M3u / M3u8 / XSPF playlists support
+-  XTream API support
+-  Viewing unencrypted streams UDP (multicast), HTTP, HLS (M3u8)
+-  Save channels as favorites
+-  Stream recording
+-  Hotkeys
+-  Channel search
+-  TV program (EPG) support in XMLTV and JTV formats
+-  Display of technical information - video / audio codec, bitrate, 
+   resolution
+-  Channel groups (from playlist and custom)
+-  Hide channels
+-  Sorting channels
+-  Video settings for each channel - contrast, brightness, hue, 
+   saturation, gamma
+-  Change user agent / HTTP Referer for each channel
+-  M3u playlist editor
+-  TV archive / catchup
+-  MPRIS support
+-  and many more...
