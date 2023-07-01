@@ -64,6 +64,10 @@ mkdir -p $PRGNAM
 cd $PRGNAM
 tar xvf $CWD/$PRGNAM-$VERSION.tar.?z
 cd $PRGNAM-$VERSION
+
+# make locales
+make all
+
 mkdir -p $PKG/usr
 cp -av usr/{bin,lib,share} $PKG/usr
 
