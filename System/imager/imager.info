@@ -1,10 +1,10 @@
 PRGNAM="imager"
-VERSION="1.7.4"
+VERSION="1.7.5"
 HOMEPAGE="https://www.raspberrypi.com/software/"
 DOWNLOAD="NOT_SUPPORTED"
 MD5SUM=""
 DOWNLOAD_x86_64="https://downloads.raspberrypi.org/imager/imager_latest_amd64.deb"
-MD5SUM_x86_64="e89ed11baea34ffce5bb6ff6349d6a9f"
+MD5SUM_x86_64="def35921cb6f44d81736dc6dd9f724df"
 REQUIRES=""
 MAINTAINER="Marco Lavorini"
 EMAIL="sbo.mlavorini@outlook.com
