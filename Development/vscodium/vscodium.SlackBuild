@@ -26,7 +26,7 @@
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=vscodium
-VERSION=${VERSION:-1.80.2.23209}
+VERSION=${VERSION:-1.81.0.23216}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_SBo}
 PKGTYPE=${PKGTYPE:-tgz}
