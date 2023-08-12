@@ -90,7 +90,7 @@ find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | gr
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
 
 install -Dm644 helpers/kdocker.1 $PKG/usr/man/man1/kdocker.1
-find $PKG/usr/man -type f -exec gzip -9 {} \;
+find $PKG/usr/man -type f -exec gzip -9 {} +
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
 cp -a \

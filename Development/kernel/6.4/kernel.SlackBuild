@@ -97,7 +97,7 @@ make INSTALL_MOD_PATH=$PKG modules_install
 
 # strip debug info from modules
 echo "Stripping debug info from kernel modules..."
-find $PKG -name "*.ko" -exec strip --strip-debug "{}" \;
+find $PKG -name "*.ko" -exec strip --strip-debug "{}" +
 
 # Fix build and source symlinks
 ( cd $PKG/lib/modules/${VERSION}
