@@ -81,7 +81,6 @@ CXXFLAGS="$SLKCFLAGS" \
 ./configure \
   --prefix=/usr \
   --libdir=/usr/lib${LIBDIRSUFFIX} \
-  --sysconfdir=/etc/xfce \
   --enable-shared=yes \
   --enable-static=no \
   --build=$ARCH-slackware-linux
