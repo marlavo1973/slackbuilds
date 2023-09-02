@@ -93,9 +93,6 @@ rm -Rf $PKG/opt/$PRGNAM/res/bin/{arc,lpaq,paq}
 # remove other OS's files
 rm -Rf $PKG/opt/$PRGNAM/res/share/{lang-wincontext,icons,batch/{*.bat,macOS*,SendTo,Windows*}}
 
-find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
-  | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
-
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
 cp -a \
   $PKG/opt/$PRGNAM/res/share/copying/copying.txt \
