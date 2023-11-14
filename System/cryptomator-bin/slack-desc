@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.
+# Line up the first '|' above the ':' following the base package name, and
+# the '|' on the right side marks the last column you can put a character in.
+# You must make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':' except on otherwise blank lines.
+
+               |-----handy-ruler------------------------------------------------------|
+cryptomator-bin: cryptomator-bin (Encryption of your files in the cloud)
+cryptomator-bin:
+cryptomator-bin: Multiplatform transparent client-side encryption of your files 
+cryptomator-bin: in the cloud.
+cryptomator-bin:
+cryptomator-bin: With Cryptomator, the key to your data is in your hands.
+cryptomator-bin: Cryptomator encrypts your data quickly and easily.
+cryptomator-bin: Afterwards you upload them protected to your favorite cloud service.
+cryptomator-bin:
+cryptomator-bin: https://cryptomator.org/
+cryptomator-bin:
