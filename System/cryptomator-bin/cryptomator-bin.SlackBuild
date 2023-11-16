@@ -1,6 +1,8 @@
 #!/bin/bash
 
 # Slackware build script for cryptomator-bin
+# Inspired by Arch Linux AUR PKGBUILD:
+# https://aur.archlinux.org/packages/cryptomator  
 
 # Copyright 2023 Marco Lavorini, Campiglia Marittima Italy
 # All rights reserved.
