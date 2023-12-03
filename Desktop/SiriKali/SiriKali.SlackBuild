@@ -101,6 +101,7 @@ if [ $ICON != default ]; then
   cp -av $CWD/$SRCNAM-$ICON-48x48.png $PKG/usr/share/icons/$SRCNAM.png
   cp -av $CWD/$SRCNAM-$ICON-48x48.png $PKG/usr/share/icons/hicolor/48x48/apps/$SRCNAM.png
   cp -av $CWD/$SRCNAM-$ICON-256x256.png $PKG/usr/share/icons/hicolor/256x256/apps/$SRCNAM.png
+  chown -R root:root $PKG/usr/share/{pixmaps,icons}
 fi
 
 cd $TMP/$PRGNAM-$VERSION
