@@ -4,9 +4,9 @@
 #
 set -e
 
-VERSION=6.6.8
-NVIDIA=${NVIDIA:-535.129.03}
-NUMJOBS=${NUMJOBS:-$(expr $(nproc) + 1)}
+export VERSION=6.6.8
+export NVIDIA=535.146.02
+export NUMJOBS=$(expr $(nproc) + 1)
 
 set -e
 
@@ -18,7 +18,7 @@ fi
 # install nvidia modules
 if [ -d /usr/src/nvidia-$NVIDIA ]; then
   cd /usr/src/nvidia-$NVIDIA
-  make clean
+  KERNEL_UNAME=$VERSION make clean
   KERNEL_UNAME=$VERSION make -j$NUMJOBS  modules
   KERNEL_UNAME=$VERSION make -j$NUMJOBS  modules_install
   depmod -a
