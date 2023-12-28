@@ -3,5 +3,5 @@ To change SiriKali icon you can try this
 for black icon:
 ICON=black bash ./SiriKali.SlackBuild
 
-for trasparent icon
+for trasparent icon:
 ICON=trasparent bash ./SiriKali.SlackBuild
