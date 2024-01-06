@@ -1,0 +1,12 @@
+PRGNAM="kernel"
+VERSION="6.6.10-zen"
+HOMEPAGE="www.kernel.org"
+DOWNLOAD="https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.6.10.tar.xz \
+https://github.com/zen-kernel/zen-kernel/releases/download/v6.6.10-zen1/linux-v6.6.10-zen1.patch.zst"
+MD5SUM="11cd95dc63d1e91e1ff55b8ac6906561 \
+3b4bf93f6bc61e004e6bbca91e7ca3bf"
+DOWNLOAD_x86_64=""
+MD5SUM_x86_64=""
+REQUIRES="%README%"
+MAINTAINER="Marco Lavorini"
+EMAIL="sbo.mlavorini@outlook.com"
