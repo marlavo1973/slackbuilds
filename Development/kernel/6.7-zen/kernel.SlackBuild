@@ -110,8 +110,8 @@ find $PKG -name "*.ko" -exec strip --strip-debug "{}" +
 # Fix build and source symlinks
 ( cd $PKG/lib/modules/$SRCVERSION-$EXTRAVERSION
   rm -rf build source
-  ln -sf ../../../usr/src/$SRCNAM-$VERSION-$EXTRAVERSION build
-  ln -sf ../../../usr/src/$SRCNAM-$VERSION-$EXTRAVERSION source
+  ln -sf ../../../usr/src/$SRCNAM-$SRCVERSION-$EXTRAVERSION build
+  ln -sf ../../../usr/src/$SRCNAM-$SRCVERSION-$EXTRAVERSION source
 )
 
 # copy kernel, system.map and config
