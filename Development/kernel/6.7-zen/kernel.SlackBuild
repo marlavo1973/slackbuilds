@@ -26,13 +26,13 @@ cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=kernel
 SRCNAM=linux
-VERSION=${VERSION:-6.7}
-SRCVERSION=${SRCVERSION:-6.7.0}
-EXTRAVERSION=${EXTRAVERSION:-zen2}
+VERSION=${VERSION:-6.7.0}
+SRCVERSION=${SRCVERSION:-6.7}
+EXTRAVERSION=${EXTRAVERSION:-zen3}
 BUILD=${BUILD:-1}
 TAG=${TAG:-ml}
 PKGTYPE=${PKGTYPE:-txz}
-NUMJOBS=${NUMJOBS:-$(expr $(nproc) + 1)}
+NUMJOBS=${NUMJOBS:-$(nproc)}
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
@@ -43,7 +43,7 @@ if [ -z "$ARCH" ]; then
 fi
 
 if [ ! -z "${PRINT_PACKAGE_NAME}" ]; then
-  echo "$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE"
+  echo "$PRGNAM-$VERSION-$EXTRAVERSION-$ARCH-$BUILD$TAG.$PKGTYPE"
   exit 0
 fi
 
@@ -57,7 +57,7 @@ rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf $PRGNAM-$VERSION-$EXTRAVERSION
-tar xvf $CWD/$SRCNAM-$VERSION.tar.?z
+tar xvf $CWD/$SRCNAM-$SRCVERSION.tar.?z
 cd $SRCNAM-$VERSION
 
 # fix owner and permission
@@ -69,17 +69,17 @@ find -L . \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \+
 
 
-cd $TMP/$SRCNAM-$VERSION
+cd $TMP/$SRCNAM-$SRCVERSION
 
 # apply patches
-zstd -d $CWD/linux-v$VERSION-$EXTRAVERSION.patch.zst
-echo "Applying patch $CWD/v$VERSION-$EXTRAVERSION.patch..."
-patch -p1 < $CWD/linux-v$VERSION-$EXTRAVERSION.patch
+zstd -d $CWD/linux-v$SRCVERSION-$EXTRAVERSION.patch.zst
+echo "Applying patch $CWD/v$SRCVERSION-$EXTRAVERSION.patch..."
+patch -p1 < $CWD/linux-v$SRCVERSION-$EXTRAVERSION.patch
 
 # Set kernel configuration 
 echo "Setting kernel config..."
-if [ -e $CWD/config-$SRCVERSION-$EXTRAVERSION ]; then
-  cp $CWD/config-$SRCVERSION-$EXTRAVERSION $TMP/linux-$VERSION/.config
+if [ -e $CWD/config-$VERSION-$EXTRAVERSION ]; then
+  cp $CWD/config-$VERSION-$EXTRAVERSION $TMP/linux-$SRCVERSION/.config
 fi
 make olddefconfig
 
@@ -108,28 +108,28 @@ echo "Stripping debug info from kernel modules..."
 find $PKG -name "*.ko" -exec strip --strip-debug "{}" +
 
 # Fix build and source symlinks
-( cd $PKG/lib/modules/$SRCVERSION-$EXTRAVERSION
+( cd $PKG/lib/modules/$VERSION-$EXTRAVERSION
   rm -rf build source
-  ln -sf ../../../usr/src/$SRCNAM-$SRCVERSION-$EXTRAVERSION build
-  ln -sf ../../../usr/src/$SRCNAM-$SRCVERSION-$EXTRAVERSION source
+  ln -sf ../../../usr/src/$SRCNAM-$VERSION-$EXTRAVERSION build
+  ln -sf ../../../usr/src/$SRCNAM-$VERSION-$EXTRAVERSION source
 )
 
 # copy kernel, system.map and config
-install -Dm644 arch/x86/boot/bzImage $PKG/boot/vmlinuz-$SRCVERSION-$EXTRAVERSION
-install -Dm644 .config $PKG/boot/config-$SRCVERSION-$EXTRAVERSION
-install -Dm644 System.map $PKG/boot/System.map-$SRCVERSION-$EXTRAVERSION
+install -Dm644 arch/x86/boot/bzImage $PKG/boot/vmlinuz-$VERSION-$EXTRAVERSION
+install -Dm644 .config $PKG/boot/config-$VERSION-$EXTRAVERSION
+install -Dm644 System.map $PKG/boot/System.map-$VERSION-$EXTRAVERSION
 
 # documentation
-mkdir -p $PKG/usr/doc/$PRGNAM-$SRCVERSION-$EXTRAVERSION
-cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$SRCVERSION-$EXTRAVERSION/$PRGNAM.SlackBuild
+mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION-$EXTRAVERSION
+cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION-$EXTRAVERSION/$PRGNAM.SlackBuild
 
 mkdir -p $PKG/install
 cat $CWD/slack-desc > $PKG/install/slack-desc
 
 # clean kernel source
-mv $TMP/$SRCNAM-$VERSION $PKG/usr/src/$SRCNAM-$SRCVERSION-$EXTRAVERSION
+mv $TMP/$SRCNAM-$SRCVERSION $PKG/usr/src/$SRCNAM-$SRCVERSION-$EXTRAVERSION
 cd $PKG/usr/src/$SRCNAM-$SRCVERSION-$EXTRAVERSION
 make clean
 
 cd $PKG
-/sbin/makepkg -l y -c n --threads $NUMJOBS $OUTPUT/$PRGNAM-$SRCVERSION-$EXTRAVERSION-$ARCH-$BUILD$TAG.$PKGTYPE
+/sbin/makepkg -l y -c n --threads $NUMJOBS $OUTPUT/$PRGNAM-$VERSION-$EXTRAVERSION-$ARCH-$BUILD$TAG.$PKGTYPE
