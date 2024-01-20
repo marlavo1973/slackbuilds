@@ -58,11 +58,7 @@ mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf $PRGNAM-$VERSION-$EXTRAVERSION
 tar xvf $CWD/$SRCNAM-$SRCVERSION.tar.?z
-<<<<<<< HEAD
-cd $SRCNAM-$VERSION
-=======
 cd $SRCNAM-$SRCVERSION
->>>>>>> 2221dcb (Updated syncthingtray-bin to version 1.4.12)
 
 # fix owner and permission
 chown -R root:root .
