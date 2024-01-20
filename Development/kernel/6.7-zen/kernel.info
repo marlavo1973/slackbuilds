@@ -1,5 +1,9 @@
 PRGNAM="kernel"
+<<<<<<< HEAD
 VERSION="6.7-zen2"
+=======
+VERSION="6.7-zen3"
+>>>>>>> 2221dcb (Updated syncthingtray-bin to version 1.4.12)
 HOMEPAGE="www.kernel.org"
 DOWNLOAD="https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.7.tar.xz \
 https://github.com/zen-kernel/zen-kernel/releases/download/v6.7-zen3/linux-v6.7-zen3.patch.zst"
