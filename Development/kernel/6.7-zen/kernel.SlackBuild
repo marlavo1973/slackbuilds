@@ -26,9 +26,8 @@ cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=kernel
 SRCNAM=linux
-VERSION=${VERSION:-6.7.0}
-SRCVERSION=${SRCVERSION:-6.7}
-EXTRAVERSION=${EXTRAVERSION:-zen3}
+VERSION=${VERSION:-6.7.2}
+EXTRAVERSION=${EXTRAVERSION:-zen1}
 BUILD=${BUILD:-1}
 TAG=${TAG:-ml}
 PKGTYPE=${PKGTYPE:-txz}
@@ -57,8 +56,8 @@ rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf $PRGNAM-$VERSION-$EXTRAVERSION
-tar xvf $CWD/$SRCNAM-$SRCVERSION.tar.?z
-cd $SRCNAM-$SRCVERSION
+tar xvf $CWD/$SRCNAM-$VERSION.tar.?z
+cd $SRCNAM-$VERSION
 
 # fix owner and permission
 chown -R root:root .
@@ -69,17 +68,17 @@ find -L . \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \+
 
 
-cd $TMP/$SRCNAM-$SRCVERSION
+cd $TMP/$SRCNAM-$VERSION
 
 # apply patches
-zstd -d $CWD/linux-v$SRCVERSION-$EXTRAVERSION.patch.zst
-echo "Applying patch $CWD/v$SRCVERSION-$EXTRAVERSION.patch..."
-patch -p1 < $CWD/linux-v$SRCVERSION-$EXTRAVERSION.patch
+zstd -d $CWD/linux-v$VERSION-$EXTRAVERSION.patch.zst
+echo "Applying patch $CWD/v$VERSION-$EXTRAVERSION.patch..."
+patch -p1 < $CWD/linux-v$VERSION-$EXTRAVERSION.patch
 
 # Set kernel configuration 
 echo "Setting kernel config..."
 if [ -e $CWD/config-$VERSION-$EXTRAVERSION ]; then
-  cp $CWD/config-$VERSION-$EXTRAVERSION $TMP/linux-$SRCVERSION/.config
+  cp $CWD/config-$VERSION-$EXTRAVERSION $TMP/linux-$VERSION/.config
 fi
 make olddefconfig
 
@@ -127,8 +126,8 @@ mkdir -p $PKG/install
 cat $CWD/slack-desc > $PKG/install/slack-desc
 
 # clean kernel source
-mv $TMP/$SRCNAM-$SRCVERSION $PKG/usr/src/$SRCNAM-$SRCVERSION-$EXTRAVERSION
-cd $PKG/usr/src/$SRCNAM-$SRCVERSION-$EXTRAVERSION
+mv $TMP/$SRCNAM-$VERSION $PKG/usr/src/$SRCNAM-$VERSION-$EXTRAVERSION
+cd $PKG/usr/src/$SRCNAM-$VERSION-$EXTRAVERSION
 make clean
 
 cd $PKG
