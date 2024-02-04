@@ -4,7 +4,7 @@
 #
 set -e
 
-export VERSION=6.7.2-zen1
+export VERSION=6.7.3-zen1
 export NVIDIA=535.154.05
 export NUMJOBS=$(expr $(nproc) + 1)
 
