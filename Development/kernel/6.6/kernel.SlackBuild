@@ -26,7 +26,7 @@ cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=kernel
 SRCNAM=linux
-VERSION=${VERSION:-6.6.14}
+VERSION=${VERSION:-6.6.16}
 BUILD=${BUILD:-1}
 TAG=${TAG:-ml}
 PKGTYPE=${PKGTYPE:-txz}
