@@ -1,10 +1,10 @@
 PRGNAM="kernel"
-VERSION="6.7.3-zen1"
+VERSION="6.7.4-zen1"
 HOMEPAGE="www.kernel.org"
-DOWNLOAD="https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.7.3.tar.xz \
-https://github.com/zen-kernel/zen-kernel/releases/download/v6.7.3-zen1/linux-v6.7.3-zen1.patch.zst"
-MD5SUM="a542a2aea4db4cf09e932fff02c8d1d1 \
-46e73f07757588e4ad73268ac5e80768"
+DOWNLOAD="https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.7.4.tar.xz \
+https://github.com/zen-kernel/zen-kernel/releases/download/v6.7.4-zen1/linux-v6.7.4-zen1.patch.zst"
+MD5SUM="370e1b6155ae63133380e421146619e0 \
+f1c2b646ca369274088944330fb72c4e"
 DOWNLOAD_x86_64=""
 MD5SUM_x86_64=""
 REQUIRES="%README%"
