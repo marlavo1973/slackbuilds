@@ -27,8 +27,8 @@
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=Fluent-gtk-theme
-VERSION=${VERSION:-20230620}
-SRCVER=${SRCVER:-2023-06-20}
+VERSION=${VERSION:-20240428}
+SRCVER=${SRCVER:-2024-04-28}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_SBo}
 PKGTYPE=${PKGTYPE:-tgz}
@@ -56,7 +56,7 @@ mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf $PRGNAM-$VERSION
 
-tar xvf $CWD/$PRGNAM-$SRCVER.tar.?z
+tar xvf $CWD/$SRCVER.tar.?z
 cd $PRGNAM-$SRCVER
 chown -R root:root .
 find -L . \
