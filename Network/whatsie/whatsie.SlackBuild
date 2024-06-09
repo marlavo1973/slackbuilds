@@ -91,7 +91,7 @@ cd src
 cd ..
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
-mv $PKG/usr/share/licenses/whatsie/LICENSE $PKG/usr/doc/$PRGNAM-$VERSION/LICENSE
+mv $PKG/usr/share/licenses/$PRGNAM/LICENSE $PKG/usr/doc/$PRGNAM-$VERSION/LICENSE
 rm -Rf $PKG/usr/share/licenses/
 
 cp -a \
