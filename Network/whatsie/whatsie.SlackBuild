@@ -77,12 +77,11 @@ cd src
   QT_INSTALL_PREFIX="/usr" \
   QMAKE_CFLAGS="$SLKCFLAGS" \
   QMAKE_CXXFLAGS="$SLKCFLAGS"
-  make -j$(nproc)
+  make
   make INSTALL_ROOT="$PKG" install
 cd ..
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
-mv $PKG/usr/share/licenses/$PRGNAM/LICENSE $PKG/usr/doc/$PRGNAM-$VERSION/LICENSE
 rm -Rf $PKG/usr/share/licenses/
 
 cp -a \
