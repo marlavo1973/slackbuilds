@@ -2,7 +2,7 @@
 
 # Slackware build script for peazip
 
-# Copyright 2023 Marco Lavorimni, Campiglia Marittima Italy
+# Copyright 2023-2024 Marco Lavorimni, Campiglia Marittima Italy
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -25,8 +25,7 @@
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=peazip
-SRCNAM=peazip_portable
-VERSION=${VERSION:-9.2.0}
+VERSION=${VERSION:-9.9.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_SBo}
 PKGTYPE=${PKGTYPE:-tgz}
@@ -50,7 +49,7 @@ OUTPUT=${OUTPUT:-/tmp}
 
 # Only x86_64 is supported
 if [ "$ARCH" = "x86_64" ]; then
-  LIBDIRSUFFIX="64"
+  true
 else
   echo Architecture $ARCH is unsupported
   exit 1
@@ -62,8 +61,13 @@ rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf $PRGNAM-$VERSION
-tar xvf $CWD/$SRCNAM-$VERSION.LINUX.GTK2.$ARCH.tar.?z
-cd $SRCNAM-$VERSION.LINUX.GTK2.$ARCH
+
+ar -x $CWD/${PRGNAM}_$VERSION.LINUX.GTK2-1_amd64.deb
+tar xvf data.tar.xz -C $PKG
+cd $PKG
+
+rm -f $PKG/usr/bin/$PRGNAM
+rm -f $PKG/usr/lib/$PRGNAM/res/share
 
 chown -R root:root .
 find -L . \
@@ -72,32 +76,12 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \+
 
-mkdir -p -m 755 $PKG/opt/$PRGNAM
-mv res pea peazip \
-  $PKG/opt/$PRGNAM
-  chmod +x $PKG/opt/$PRGNAM/{pea,peazip}
-
-mkdir -p $PKG/usr/bin
-ln -sf ../../opt/$PRGNAM/$PRGNAM \
-  $PKG/usr/bin/$PRGNAM
-
-mkdir -p $PKG/usr/share/{applications,pixmaps}
-cp $PKG/opt/$PRGNAM/res/share/batch/freedesktop_integration/$PRGNAM.desktop \
-  $PKG/usr/share/applications
-cp $PKG/opt/$PRGNAM/res/share/batch/freedesktop_integration/*.png \
-  $PKG/usr/share/pixmaps
-
-rm $PKG/opt/$PRGNAM/res/portable
-# remove 32 bit plugins, provided by another package
-rm -Rf $PKG/opt/$PRGNAM/res/bin/{arc,lpaq,paq}
-# remove other OS's files
-rm -Rf $PKG/opt/$PRGNAM/res/share/{lang-wincontext,icons,batch/{*.bat,macOS*,SendTo,Windows*}}
-
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
 cp -a \
-  $PKG/opt/$PRGNAM/res/share/copying/copying.txt \
+  $PKG/usr/share/doc/$PRGNAM/* \
   $PKG/usr/doc/$PRGNAM-$VERSION
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
+rm -Rf $PKG/usr/share/doc
 
 mkdir -p $PKG/install
 cat $CWD/slack-desc > $PKG/install/slack-desc

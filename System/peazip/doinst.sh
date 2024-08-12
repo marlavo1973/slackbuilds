@@ -12,3 +12,5 @@ if [ -e usr/share/icons/hicolor/icon-theme.cache ]; then
   fi
 fi
 
+ln -sf /usr/lib/peazip/peazip /usr/bin/peazip
+ln -sf /usr/share/peazip /usr/lib/peazip/res/share
