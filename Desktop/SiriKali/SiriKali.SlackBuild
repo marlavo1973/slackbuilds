@@ -89,6 +89,8 @@ cmake \
 make
 make install/strip DESTDIR=$PKG
 
+chmod 644 $PKG/usr/share/applications/*.desktop
+
 cd $TMP/$PRGNAM-$VERSION
 mkdir -p $PKG/usr/man/
 mv $PKG/usr/share/man/* $PKG/usr/man/
