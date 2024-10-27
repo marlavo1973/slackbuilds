@@ -25,7 +25,7 @@
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=peazip
-VERSION=${VERSION:-9.9.1}
+VERSION=${VERSION:-10.0.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_SBo}
 PKGTYPE=${PKGTYPE:-tgz}
@@ -96,7 +96,8 @@ cp -a \
   $PKG/usr/doc/$PRGNAM-$VERSION
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 rm -Rf $PKG/usr/share/doc
-mv $PKG/usr/share/$PRGNAM/copying/ $PKG/usr/doc/$PRGNAM-$VERSION/copying
+mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION/copying/third-parties
+cp -r $PKG/usr/share/$PRGNAM/copying/ $PKG/usr/doc/$PRGNAM-$VERSION
 
 mkdir -p $PKG/install
 cat $CWD/slack-desc > $PKG/install/slack-desc
