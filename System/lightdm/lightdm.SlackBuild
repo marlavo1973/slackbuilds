@@ -2,7 +2,7 @@
 
 # Slackware build script for lightdm
 
-# Copyright 2023 Marco Lavorini, Campiglia Marittima Italy
+# Copyright 2023 Marco Lavorini, Italy
 # Heavily inspired by the SLKBUILD of George Vlahavas <vlahavas~at~gmail~dot~com> (SalixOS)
 # https://download.salixos.org/x86_64/15.0/source/xap/lightdm/SLKBUILD
 #
