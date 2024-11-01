@@ -7,4 +7,4 @@ DOWNLOAD_x86_64="https://github.com/VSCodium/vscodium/releases/download/1.94.2.2
 MD5SUM_x86_64="693f4489ce30b31c3a7ebeda93d83aea"
 REQUIRES=""
 MAINTAINER="Marco Lavorini"
-EMAIL="sbo.mlavorini@outlook.com"
+EMAIL="sbo dot mlavorini at outlook dot com"

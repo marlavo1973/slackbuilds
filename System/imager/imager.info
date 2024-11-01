@@ -7,4 +7,4 @@ DOWNLOAD_x86_64="https://downloads.raspberrypi.org/imager/imager_latest_amd64.de
 MD5SUM_x86_64="9409fd6485874f4fdb345791b8bfccc4"
 REQUIRES=""
 MAINTAINER="Marco Lavorini"
-EMAIL="sbo.mlavorini@outlook.com
+EMAIL="sbo dot mlavorini at outlook dot com
