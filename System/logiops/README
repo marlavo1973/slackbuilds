@@ -15,7 +15,7 @@ commands:
 cat >> /etc/rc.d/rc.local <<EOF
 # Start logiops daemon
 if [ -x /usr/bin/logid -a -r /etc/logid.cfg ]; then
-  echo "Starting logid daemon"
+  echo "Starting logiops daemon"
   /usr/bin/logid &
 fi
 EOF
