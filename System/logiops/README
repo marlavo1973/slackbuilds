@@ -10,10 +10,10 @@ another can be specified using the `-c` flag.
 
 ## Execute daemon
 To execute logid daemon at boot, you may execute (as root) the following
-command:
+commands:
 
 cat >> /etc/rc.d/rc.local <<EOF
-# Start logid daemon
+# Start logiops daemon
 if [ -x /usr/bin/logid -a -r /etc/logid.cfg ]; then
   echo "Starting logid daemon"
   /usr/bin/logid &
