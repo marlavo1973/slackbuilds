@@ -111,8 +111,8 @@ install -Dm644 $SRC/peazip.desktop -t $PKG/usr/share/applications
 # res
 install -dm755 $PKG/usr/share/$PRGNAM
 SRC=$TMP/$PRGNAM-$VERSION/peazip-sources/res/share
-cp --reflink=auto -a $SRC/{icons,lang,themes} $PKG/usr/share/$PRGNAM/
-cp --reflink=auto -a $SRC/*.pdf               $PKG/usr/share/$PRGNAM/
+cp --reflink=auto -a $SRC/{icons,lang,themes,presets} $PKG/usr/share/$PRGNAM/
+cp --reflink=auto -a $SRC/*.pdf                       $PKG/usr/share/$PRGNAM/
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
 cp $TMP/$PRGNAM-$VERSION/LICENSE $PKG/usr/doc/$PRGNAM-$VERSION
