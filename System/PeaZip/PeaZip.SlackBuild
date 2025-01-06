@@ -29,7 +29,8 @@ VERSION=${VERSION:-10.2.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_SBo}
 PKGTYPE=${PKGTYPE:-tgz}
-WIDGET=gtk2
+# gtk2 (default), gtk3 (alpha stage) or qt6 (requires installation of Qt bindings)
+WIDGET=${WIDGET:-gtk2}
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
