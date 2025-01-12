@@ -1,0 +1,2 @@
+- The Peazip 10.2.0 GTK2 deb package requires glibc 2.34 but 
+slackware 15.0 has glibc 2.32, so for now I am sticking to Peazip 10.1.0
