@@ -67,9 +67,7 @@ ar -x $CWD/${SRCNAM}_$VERSION.LINUX.GTK2-1_amd64.deb
 tar xvf data.tar.xz -C $PKG
 cd $PKG
 
-ls -lha $PKG/usr/bin/$SRCNAM
 rm -rf $PKG/usr/bin/$SRCNAM
-ls -lha $PKG/usr/lib/$SRCNAM/res/share
 rm -rf $PKG/usr/lib/$SRCNAM/res/share
 
 if [ "$ARCH" = "x86_64" ]; then
