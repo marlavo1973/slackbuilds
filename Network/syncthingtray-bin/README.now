@@ -1,0 +1,3 @@
+Syncthingtray, since version 1.7.10 require newer libc, not available in
+slackware 15.0
+For now, we'll stay to version 1.7.8.
