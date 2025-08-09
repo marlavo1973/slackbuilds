@@ -5,6 +5,8 @@
 # Copyright 2025 Marco Lavorini, Italy
 # All rights reserved.
 #
+# Heavy based on https://aur.archlinux.org/cgit/aur.git/tree/PKGBUILD?h=peazip 
+#
 # Redistribution and use of this script, with or without modification, is
 # permitted provided that the following conditions are met:
 #
@@ -25,7 +27,7 @@
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=PeaZip
-VERSION=${VERSION:-10.5.0}
+VERSION=${VERSION:-10.6.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_SBo}
 PKGTYPE=${PKGTYPE:-tgz}
@@ -77,7 +79,7 @@ sed -E \
 # compiler/linker options
 for x in ${PACKS[@]}; do
  xmlstarlet edit --inplace --delete '//Other' "$x"
-  sed -E 's&(</CompilerOptions>)&<Other><CustomOptions Value='\''-O3 -Sa -CX -XX -k"--sort-common --as-needed -z relro -z now -z ibt -z shstk"'\''/></Other>\n\1&' \
+   sed -E 's&(</CompilerOptions>)&<Other><CustomOptions Value="-O3 -Sa -CX -XX -k--sort-common -k--as-needed -k-z -krelro -k-z -know -k-z -kibt -k-z -kshstk"/></Other>\n\1&' \
    -i "$x"
 done
 
