@@ -2,7 +2,7 @@
 
 # Slackware build script for 7-Zip
 
-# Copyright 2021-2024 Marco Lavorini, Italy
+# Copyright 2021-2025 Marco Lavorini, Italy
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -26,8 +26,8 @@ cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=7-Zip
 SRCNAM=7z
-VERSION=${VERSION:-25.00}
-SRCVER=${PKGVER:-2409}
+VERSION=${VERSION:-25.01}
+SRCVER=${PKGVER:-2501}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_SBo}
 PKGTYPE=${PKGTYPE:-tgz}
