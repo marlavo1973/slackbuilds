@@ -73,10 +73,11 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} +
 
+install -m 0755 --strip 7zz $PKG/usr/bin/7z
+
 cp -r readme.txt History.txt License.txt MANUAL $PKG/usr/doc/$PRGNAM-$VERSION
-install -m 0755 7zz $PKG/usr/bin
-install -m 0755 7zzs $PKG/usr/bin
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
+
 mkdir -p $PKG/install
 cat $CWD/slack-desc > $PKG/install/slack-desc
 
