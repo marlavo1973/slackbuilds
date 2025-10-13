@@ -1,0 +1,7 @@
+FDM is a powerful modern download accelerator and organizer.
+It is a powerful modern cross-platform download accelerator and 
+ organizer for Windows, Mac, Linux, Android.
+ 
+This is a repackaging of the deb package for Ubuntu prior to version
+22.04 that uses glibc lower than version 2.34.
+
