@@ -1,3 +1,5 @@
-Xfce4-docklike-plugin, since version 0.4.3, require libxfce4windowing-0
+Xfce4-docklike-plugin, since version 0.4.3, require 	-0
 >= 4.19.4, not available in xfce4's slackware 15.0.
 For now, we'll stay to version 0.4.2.
+
+See xfce4-docklike-plugin-0.5.0.diff for future upgrade.
