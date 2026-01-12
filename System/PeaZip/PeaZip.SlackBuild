@@ -51,6 +51,17 @@ TMP=${TMP:-/tmp/SBo}
 PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}
 
+if [ "$ARCH" = "i586" ]; then
+  FPC_ARCH="i386" # This is required to compile with fpc
+elif [ "$ARCH" = "i686" ]; then
+  FPC_ARCH="i386" # This is required to compile with fpc
+elif [ "$ARCH" = "x86_64" ]; then
+  FPC_ARCH="x86_64"
+else
+  echo $ARCH is not supported
+  exit 1
+fi
+
 set -e
 
 rm -rf $PKG
@@ -91,7 +102,7 @@ done
 
 LAZ_OPTS=(
    --build-all \
-   --cpu=$ARCH \
+   --cpu=$FPC_ARCH \
    --lazarusdir=/usr/share/lazarus \
    --os=linux \
    --primary-config-path=config \
