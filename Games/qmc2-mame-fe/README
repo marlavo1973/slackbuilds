@@ -1,0 +1,7 @@
+M.A.M.E. Catalog / Launcher II
+The successor of one of the first UNIX M.A.M.E. GUI front ends available
+on this planet called QMamecat (derived from MAMECAT, which was 
+text-only).
+QMamecat was based upon Qt 2; its development was frozen in 2003.
+
+This requires a MAME executable at runtime.
